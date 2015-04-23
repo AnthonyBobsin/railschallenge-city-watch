@@ -9,7 +9,8 @@ class RespondersCreateTest < ActionDispatch::IntegrationTest
     post '/responders/', responder: { type: 'Medical', name: 'M-100', capacity: 3 }
   end
 
-  test 'POST /responders/ simple creation' do
+  # test 'POST /responders/ simple creation' do
+  test 'first_test' do
     post '/responders/', responder: { type: 'Fire', name: 'F-NEW', capacity: 1 }
     body = JSON.parse(response.body)
 
