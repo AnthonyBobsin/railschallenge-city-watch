@@ -28,8 +28,7 @@ class RespondersCreateTest < ActionDispatch::IntegrationTest
     )
   end
 
-  # test 'POST /responders/ capacity can be a number between 1..5' do
-  test 'current_test' do
+  test 'POST /responders/ capacity can be a number between 1..5' do
     post '/responders', responder: { type: 'Fire', name: 'F-200', capacity: 0 }
     assert_equal 422, response.status
     assert_equal({ 'message' => { 'capacity' => ['is not included in the list'] } }, JSON.parse(body))

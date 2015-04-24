@@ -7,7 +7,7 @@ class RespondersController < ApplicationController
     def create
         @responder = Responder.new(responder_params)
         if @responder.save
-            render :show, status: 201
+            render :show, status: :created 
         else
             render_error body: @responder.errors
         end
