@@ -9,8 +9,7 @@ class RespondersCreateTest < ActionDispatch::IntegrationTest
     post '/responders/', responder: { type: 'Medical', name: 'M-100', capacity: 3 }
   end
 
-  # test 'POST /responders/ simple creation' do
-  test 'first_test' do
+  test 'POST /responders/ simple creation' do
     post '/responders/', responder: { type: 'Fire', name: 'F-NEW', capacity: 1 }
     body = JSON.parse(response.body)
 
@@ -29,7 +28,8 @@ class RespondersCreateTest < ActionDispatch::IntegrationTest
     )
   end
 
-  test 'POST /responders/ capacity can be a number between 1..5' do
+  # test 'POST /responders/ capacity can be a number between 1..5' do
+  test 'current_test' do
     post '/responders', responder: { type: 'Fire', name: 'F-200', capacity: 0 }
     assert_equal 422, response.status
     assert_equal({ 'message' => { 'capacity' => ['is not included in the list'] } }, JSON.parse(body))

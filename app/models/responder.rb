@@ -5,5 +5,5 @@ class Responder < ActiveRecord::Base
 
     validates :type, presence: true
     validates :name, presence: true, uniqueness: true
-    validates :capacity, presence: true, numericality: { greater_than_or_equal_to: 1, less_than_or_equal_to: 5 }
+    validates :capacity, presence: true, inclusion: 1..5
 end

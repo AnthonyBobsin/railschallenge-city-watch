@@ -9,7 +9,7 @@ class RespondersController < ApplicationController
         if @responder.save
             render :show, status: 201
         else
-            render json: get_resource.errors, status: 422
+            render_error body: @responder.errors
         end
     end
 
